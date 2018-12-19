@@ -1,0 +1,197 @@
+/* BASE */
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+:root {
+    /* main colors */
+    --light-blue: #1bcdde;
+    --darker-blue: #302d68;
+    --text-color: #363636;
+    --light-grey: #f9f9f9;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color:var(--text-color);
+    background: var(--light-grey);
+
+    /* center content */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TEMPLATE */
+.table-body {
+    margin: 20px 0;
+    box-shadow: 0 0 5px #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    background: white;
+}
+
+header {
+    text-align: center;
+    padding: 0 15px;
+}
+
+/* COMPONENTS */
+h1 {
+    font-size: 2.5em;
+    color:var(--darker-blue);
+    margin: 15px 0 5px 0;
+}
+
+.disclaimer {
+    font-style: italic;
+}
+
+.search-box {
+    padding: 25px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-search {
+    border: 0;
+    border-bottom: 5px solid var(--light-blue);
+    padding: 15px;
+    border-radius: 3px;
+    width: 100%;
+    min-width: 300px;
+    max-width: 500px;
+    background: #fff;
+    text-align: center;
+}
+
+/* table */
+.table-students th {
+    border: 0;
+    padding: 15px 30px;
+    background: var(--light-blue);
+    text-align: center;
+    min-width: 130px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.table-students th a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.table-students td {
+    border-bottom: 1px solid var(--light-grey);
+    padding: 10px;
+}
+
+.table-students tbody tr:hover {
+    background: var(--light-grey);
+    font-style: italic;
+    transition: background .5s;
+}
+
+.table-students tr:last-of-type * {
+    border: 0;
+}
+
+/* style */
+.is-blue-text {
+    font-weight: bold;
+    color: var(--light-blue);
+}
+
+.is-th-hover:hover {
+    cursor: pointer;
+    opacity: .8;
+    transition: opacity .5s;
+}
+
+/* responsive */
+@media screen and (max-width: 1250px) {
+    .filters * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    #table {
+        max-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .table-body {
+        width: 83%;
+    }
+
+    .table-students {
+        width: 100%;
+        text-align: center;
+    }
+
+    .table-students thead {
+        display: none;
+    }
+
+    .table-students td {
+        padding: 5px;
+    }
+
+    .table-students td:before {
+        content: attr(data-th);
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .table-students tr {
+        background: var(--light-grey);
+        display: block;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .table-students tbody tr:hover {
+        font-style: normal;
+    }
+
+    .table-students th {
+        display: none;
+    }
+    
+    .table-students td {
+        display: block;
+    }
+
+    .table-students td:before {
+        color: var(--light-blue);
+        margin-right: 5px;
+    }
+
+    /*
+        @todo
+        This is a hacking, because attr data-th is not working.
+        Refactor this part.
+    */
+    td:nth-child(1):before {
+        content: 'Email';
+    }
+    td:nth-child(2):before {
+        content: 'First Name';
+    }
+    td:nth-child(3):before {
+        content: 'Last Name';
+    }
+    td:nth-child(4):before {
+        content: 'Primary Group';
+    }
+    td:nth-child(5):before {
+        content: 'Phone Number';
+    }
+    td:nth-child(6):before {
+        content: 'Hours Studied';
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Voxy Challenge | Students Table</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <!-- Using Vue.js by CDN for better analysis -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Include ordering component -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Students Table</h1>
+        <div class="disclaimer">Coding Challenge from <span class="is-blue-text">Voxy</span>. Made with <i class="fas fa-heart is-blue-text" aria-label="love"></i> by <span class="is-blue-text">Bianca Pereira</span>.</div>
+    </header>
+    <div id="table">
+        <div class="filters">
+            <div class="search-box">
+                <input v-model="search" class="form-search" aria-label="Filter by email or group" placeholder="Filter by email or group">
+            </div>
+        </div>
+        <div class="table-body">
+            <table class="table-students">
+                <thead>
+                    <th data-th="Email">Email</th>
+                    <th data-th="First Name">First Name</th>
+                    <th data-th="Last Name">Last Name</th>
+                    <th data-th="Primary Group">Primary Group</th>
+                    <th data-th="Phone Number">Phone Number</th>
+                    <th @click="clickHandler" class="is-th-hover" data-th="Hours">Hours <i class="fas fa-sort" aria-label="Sort by Hours"></i></th>
+                </thead>
+                <tbody>
+                    <tr v-for="student in filteredList">
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.fname }}</td>
+                        <td>{{ student.lname }}</td>
+                        <td>{{ student.group }}</td>
+                        <td>{{ student.phone }}</td>
+                        <td>{{ student.hours }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./js/table.js"></script>
+</body>
+</html>
