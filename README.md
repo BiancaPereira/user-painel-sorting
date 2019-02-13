@@ -1,7 +1,11 @@
-# Voxy Challenge
+# User Painel Sorting
 
-No installation needed because I'm using Vue.js with CDN (no Webpack). 
+I created this User Painel to study more about Vue.js.
+I used Vue.js via VPN and CSS with Flexbox. 
 
-Just open in your browser the `index.html` file.
+You can visit the [Github Page](https://biancapereira.github.io/user-painel-sorting/) to see the painel working.
 
-You can also visit the [Github Page](https://biancapereira.github.io/codingchallenge/).
+# Features 
+
+* Sort by Hours
+* Filter by Email or Primary Group
